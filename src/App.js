@@ -1,44 +1,29 @@
 import React from "react";
 
 function App() {
-  const myName = "Валерій";
-  const favWebsite = { name: "Google", url: "https://www.google.com/" };
-
-  const firstNumber = 349;
-  const secondNumber = 247;
-  const sum = firstNumber + secondNumber;
-
-  const colors = ["Червоний", "Синій", "Зелений"];
-
+  const name = "Valerii";
+  const text = "Ласкаво просимо до нашого сайту";
+  const urlImg =
+    "https://cdn.pixabay.com/photo/2023/12/29/18/23/daisy-8476666_1280.jpg";
+  const alt = "daisy";
+  const obj = {
+    name: "pixabay",
+    url: "https://pixabay.com/pl/",
+  };
+  const firstNum = 12;
+  const secondNum = 303;
+  const colors = ["Червоний", "синій", "зелений"];
   return (
     <div className="App">
-      <h1>Моє ім'я: {myName}</h1>
-      <p>Ласкаво просимо до нашого сайту!</p>
-
-      <img
-        src="https://cdn.pixabay.com/photo/2013/01/29/00/47/google-76517_1280.png"
-        alt="sky"
-        width="500"
-      />
-
-      <h4>
-        улюблений сайт:{" "}
-        <a href={favWebsite.url} target="_blank">
-          {favWebsite.name}
-        </a>
-      </h4>
-
-      <h4>Сума чисел:</h4>
-      <p>
-        {firstNumber} + {secondNumber} = {sum}
-      </p>
-
-      <h4>Список кольорів:</h4>
-
+      <h1> {name} </h1>
+      <p>{text}</p>
+      <img width="300" src={urlImg} alt={alt} />
+      <a href={obj.url}>{obj.name}</a>
+      <p>{firstNum + secondNum}</p>
       <ul>
-        {colors.map((color, index) => (
-          <li key={index}>{color}</li>
-        ))}
+        {colors.map((color, index) => {
+          return <li key={index}>{color}</li>;
+        })}
       </ul>
     </div>
   );
